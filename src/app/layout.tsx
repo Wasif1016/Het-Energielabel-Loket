@@ -16,11 +16,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://emw-groep.nl"),
   title: {
-    default: "EMW Groep | Energielabel & Duurzaamheidsadvies",
-    template: "%s | EMW Groep",
+    default: "Het Energielabel Loket | Energielabel & Duurzaamheidsadvies",
+    template: "%s | Het Energielabel Loket",
   },
   description:
-    "EMW Groep biedt professionele diensten voor energielabels, NEN 2580 meetrapporten, WWS puntentelling en duurzaamheidsadvies. Maak uw woning energiezuinig en verhoog de waarde.",
+    "Het Energielabel Loket biedt professionele diensten voor energielabels, NEN 2580 meetrapporten, WWS puntentelling en duurzaamheidsadvies. Maak uw woning energiezuinig en verhoog de waarde.",
   keywords: [
     "energielabel",
     "NEN 2580",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     "woningwaarde",
     "energiebesparing",
   ],
-  authors: [{ name: "EMW Groep" }],
-  creator: "EMW Groep",
-  publisher: "EMW Groep",
+  authors: [{ name: "Het Energielabel Loket" }],
+  creator: "Het Energielabel Loket",
+  publisher: "Het Energielabel Loket",
   formatDetection: {
     email: false,
     address: false,
@@ -45,26 +45,26 @@ export const metadata: Metadata = {
     type: "website",
     locale: "nl_NL",
     url: "https://emw-groep.nl",
-    siteName: "EMW Groep",
-    title: "EMW Groep | Energielabel & Duurzaamheidsadvies",
+    siteName: "Het Energielabel Loket",
+    title: "Het Energielabel Loket | Energielabel & Duurzaamheidsadvies",
     description:
-      "EMW Groep biedt professionele diensten voor energielabels, NEN 2580 meetrapporten, WWS puntentelling en duurzaamheidsadvies. Maak uw woning energiezuinig en verhoog de waarde.",
+      "Het Energielabel Loket biedt professionele diensten voor energielabels, NEN 2580 meetrapporten, WWS puntentelling en duurzaamheidsadvies. Maak uw woning energiezuinig en verhoog de waarde.",
     images: [
       {
         url: "/logo.jpg",
         width: 1200,
         height: 630,
-        alt: "EMW Groep - Energielabel & Duurzaamheidsadvies",
+        alt: "Het Energielabel Loket - Energielabel & Duurzaamheidsadvies",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "EMW Groep | Energielabel & Duurzaamheidsadvies",
+    title: "Het Energielabel Loket | Energielabel & Duurzaamheidsadvies",
     description:
-      "EMW Groep biedt professionele diensten voor energielabels, NEN 2580 meetrapporten, WWS puntentelling en duurzaamheidsadvies.",
+      "Het Energielabel Loket biedt professionele diensten voor energielabels, NEN 2580 meetrapporten, WWS puntentelling en duurzaamheidsadvies.",
     images: ["/logo.jpg"],
-    creator: "@emwgroep",
+    creator: "@Het Energielabel Loket",
   },
   robots: {
     index: true,
@@ -133,20 +133,20 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "EMW Groep",
+              name: "Het Energielabel Loket",
               url: "https://emw-groep.nl",
               logo: "https://emw-groep.nl/logo.png",
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+31647198116",
                 contactType: "customer service",
-                email: "info@emw-groep.nl",
+                email: "energielabel.loket@gmail.com",
                 availableLanguage: ["Dutch"],
               },
               sameAs: [
-                "https://www.facebook.com/emwgroep",
+                "https://www.facebook.com/Het Energielabel Loket",
                 "https://www.linkedin.com/company/emw-groep",
-                "https://twitter.com/emwgroep",
+                "https://twitter.com/Het Energielabel Loket",
               ],
             }),
           }}

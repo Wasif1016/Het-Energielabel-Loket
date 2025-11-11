@@ -28,17 +28,13 @@ export function SustainabilitySection() {
               </div>
 
               <p className="text-lg leading-relaxed">
-                Wij leveren energielabels en bieden gericht advies om uw woning
-                te verbeteren op het gebied van isolatie, installaties en
-                energieverbruik. Met onze expertise helpen we u bij het
-                verduurzamen van uw woning en het verhogen van het energielabel
-                – efficiënt, praktisch en afgestemd op uw situatie.
+              Wij analyseren uw isolatie, installaties en energieverbruik en bieden praktische oplossingen om uw huis te verduurzamen én het energielabel te verbeteren. Met onze professionele begeleiding bespaart u energie, verhoogt u de waarde van uw woning en geniet u van een comfortabeler leefklimaat.
               </p>
 
               {/* Feature List */}
               <div className="space-y-4 pt-6">
                 {[
-                  "Professionele energielabel certificering for gecertificeerd volgens brl 9500",
+                  "Professionele energielabel certificering",
                   "Persoonlijk advies voor woningverbetering",
                   "Expertise in duurzame oplossingen",
                 ].map((feature, index) => (
@@ -95,8 +91,8 @@ export function SustainabilitySection() {
             >
               <ParallaxImage
                 className="w-full mx-auto rounded-[1rem] lg:rounded-none"
-                src="/advice.webp"
-                alt="Modern construction project"
+                src="/our-advisors.jpg"
+                alt="Our advisors"
                 fill={true}
               />
               {/* Gradient Overlay */}

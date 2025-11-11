@@ -14,37 +14,37 @@ const features = [
   {
     title: "Alles onder één dak",
     description:
-      "Van energielabels tot NEN 2580 meetrapporten en WWS-puntentellingen – bij EMW Groep regelen we het volledige traject. Efficiënt, transparant en professioneel.",
+      "Van energielabels tot NEN 2580 meetrapporten en WWS-puntentellingen – bij Het Energielabel Loket regelen we het volledige traject efficiënt, transparant en professioneel.",
     icon: <Building2 className="w-12 h-12 text-primary" />,
   },
   {
     title: "Snelle levering",
     description:
-      "Wij begrijpen dat u snel duidelijkheid nodig heeft, zeker bij verkoop of verhuur van een woning. Daarom leveren wij onze rapporten en adviezen snel en accuraat.",
+      "Wij zorgen voor snelle en nauwkeurige rapporten en adviezen, zodat u direct duidelijkheid heeft bij verkoop of verhuur van uw woning.",
     icon: <Timer className="w-12 h-12 text-primary" />,
   },
   {
     title: "Gecertificeerde adviseurs",
     description:
-      "Onze energieadviseurs en meetexperts zijn volledig gecertificeerd en werken volgens de actuele normen en richtlijnen, zoals BRL9500 en NEN 2580.",
+      "Onze energieadviseurs en meetexperts zijn volledig gecertificeerd en werken volgens de geldende normen en richtlijnen, zoals BRL 9500 en NEN 2580.",
     icon: <Award className="w-12 h-12 text-primary" />,
   },
   {
     title: "Advies op maat",
     description:
-      "U ontvangt niet alleen een rapport, maar ook helder en praktisch advies om uw woning te verbeteren – of het nu gaat om isolatie, ventilatie of andere energiebesparende maatregelen.",
+      "U ontvangt niet alleen een rapport, maar ook duidelijk en praktisch advies om uw woning te verbeteren – bijvoorbeeld op het gebied van isolatie, ventilatie of andere energiebesparende maatregelen.",
     icon: <Lightbulb className="w-12 h-12 text-primary" />,
   },
   {
     title: "Eén vast aanspreekpunt",
     description:
-      "Bij EMW Groep krijgt u persoonlijke begeleiding van A tot Z. U heeft één contactpersoon die het hele traject coördineert en altijd bereikbaar is voor vragen.",
+      "Bij Het Energielabel Loket krijgt u persoonlijke begeleiding van A tot Z. Eén contactpersoon coördineert het volledige traject en is altijd bereikbaar voor uw vragen.",
     icon: <UserCircle2 className="w-12 h-12 text-primary" />,
   },
   {
     title: "Eén vast aanspreekpunt",
     description:
-      "Bij EMW Groep krijgt u persoonlijke begeleiding van A tot Z. U heeft één contactpersoon die het hele traject coördineert en altijd bereikbaar is voor vragen.",
+      "Bij Het Energielabel Loket krijgt u persoonlijke begeleiding van A tot Z, met één contactpersoon die het volledige traject coördineert en altijd bereikbaar is voor uw vragen.",
     icon: <MessageSquareMore className="w-12 h-12 text-primary" />,
   },
 ];

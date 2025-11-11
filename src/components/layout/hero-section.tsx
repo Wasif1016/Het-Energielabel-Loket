@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ParallaxImage } from "../ui/ParallaxImage";
+import CleanEnvironment from "./clean environment.jpg";
 
 export function HeroSection() {
   return (
@@ -37,9 +38,7 @@ export function HeroSection() {
               lineHeight: "120%",
             }}
           >
-            Duurzame energielabels
-            <br /> Praktisch advies
-            <br /> Slimmere huizen
+            Duurzame energielabels voor een slimmer en zuiniger huis
           </motion.h1>
 
           <motion.p
@@ -48,9 +47,8 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-foreground/90 text-xl md:text-2xl mb-12 max-w-2xl mx-auto"
           >
-            Wij beoordelen de energieprestaties van uw woning en leveren
-            maatwerkoplossingen voor isolatie, installaties en verbruik. Krijg
-            een groener huis – sneller, eenvoudiger en op maat gemaakt.
+           Laat uw woning professioneel beoordelen en ontdek hoe u direct kunt besparen op energieverbruik.
+           Wij leveren praktische oplossingen op maat – van isolatie en installaties tot energieadvies – zodat uw huis groener, comfortabeler en waardevoller wordt.
           </motion.p>
 
           <motion.div
@@ -74,8 +72,8 @@ export function HeroSection() {
           >
             <ParallaxImage
               className="w-full mx-auto rounded-[1rem] lg:rounded-none"
-              src="/Banner.jpg"
-              alt="Modern construction project"
+              src={CleanEnvironment}
+              alt="Clean environment"
               fill={true}
             />
           </motion.div>

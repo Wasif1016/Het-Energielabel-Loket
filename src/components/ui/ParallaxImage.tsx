@@ -1,7 +1,7 @@
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 interface ParallaxImageProps {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
   className?: string;
   fill?: boolean;
@@ -74,7 +74,8 @@ export function ParallaxImage({
   }, []);
 
   // Check if source is a video
-  const isVideo = src.endsWith('.mp4') || src.endsWith('.webm');
+  const isVideo =
+    typeof src === "string" && (src.endsWith(".mp4") || src.endsWith(".webm"));
 
   return (
     <div

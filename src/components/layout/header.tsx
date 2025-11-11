@@ -118,7 +118,7 @@ export function Header() {
             <span className="hidden md:inline">Bel ons</span>
             <span className="md:ml-2">+31647198116</span>
           </a>
-          <a href="mailto:info@emw-groep.nl" className="flex items-center ">
+          <a href="mailto:energielabel.loket@gmail.com" className="flex items-center ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -135,7 +135,7 @@ export function Header() {
               <path d="m22 6-10 7L2 6" />
             </svg>
             <span className="hidden md:inline">Email ons</span>
-            <span className="md:ml-2">info@emw-groep.nl</span>
+            <span className="md:ml-2">energielabel.loket@gmail.com</span>
           </a>
         </div>
       </div>
@@ -152,7 +152,7 @@ export function Header() {
               priority
             />
             <h1 className="text-2xl font-bold text-primary hover:text-primary/90 transition-colors">
-              EMW Groep
+              Het Energielabel Loket
             </h1>
           </Link>
 

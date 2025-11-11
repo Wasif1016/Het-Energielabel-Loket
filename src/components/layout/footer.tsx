@@ -25,7 +25,7 @@ export function Footer() {
 
           {/* Company Info */}
           <div className="text-foreground/90 space-y-2">
-            <p>© 2025 EMW Groep. Alle rechten voorbehouden</p>
+            <p>© 2025 Het Energielabel Loket. Alle rechten voorbehouden</p>
           </div>
           <div className="text-foreground/90">
             <p>Developed by

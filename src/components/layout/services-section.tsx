@@ -8,30 +8,30 @@ import { ParallaxImage } from "../ui/ParallaxImage";
 
 const services = [
   {
-    title: "Energielabel voor woningen",
+    title: "Energielabel voor Woningen",
     paragraph:
-      "Wij verzorgen het verplichte energielabel voor de verkoop of verhuur van uw woning. Onze gecertificeerde adviseurs zorgen voor een snelle en nauwkeurige opstelling van het energielabel woning volgens de geldende normen.",
-    image: "/Energy-Label.avif",
+      "Onze BRL 9500-gecertificeerde adviseurs leveren een betrouwbare, nauwkeurige en snelle beoordeling volgens alle geldende normen – zodat uw woning voldoet aan de wettelijke eisen én aantrekkelijker wordt voor kopers of huurders.",
+    image: "/home energy assessment.jpg",
     link: "#contact",
   },
   {
-    title: "NEN 2580 meetrapport",
+    title: "NEN 2580 Meetrapport",
     paragraph:
-      "Een officieel NEN 2580 meetrapport voor het bepalen van de gebruiksoppervlakte van uw woning, belangrijk bij de verkoop of verhuur van vastgoed of bij een woningsplitsing.",
-    image: "/NEN-2580-Measurement.avif",
+      "Ontvang een officieel NEN 2580 meetrapport voor een nauwkeurige bepaling van de gebruiksoppervlakte van uw woning – essentieel bij verkoop, verhuur of woningsplitsing.",
+    image: "/real estate surveyor measuring house.jpg",
     link: "#contact",
   },
   {
     title: "WWS puntentelling",
     paragraph:
       "Wij voeren de puntentelling volgens het WWS (Woningwaarderingsstelsel) uit om de maximale huurprijs van uw woning te bepalen. Dit is essentieel voor het bepalen van de huurberekening in zowel de sociale als vrije sector.",
-    image: "/WWS-Point-Analysis.avif",
+    image: "/rental property scoring.jpg",
     link: "#contact",
   },
   {
     title: "Duurzaamheidsadvies",
     paragraph:
-      "Slimme, praktische oplossingen om isolatie, technologie en energieverbruik te verbeteren, afgestemd op uw budget",
+      "Slimme en praktische oplossingen om isolatie, technologie en energieverbruik te verbeteren – volledig afgestemd op uw woning en budget.",
     image: "/Sustainability-Advice.avif",
     link: "#contact",
   },
@@ -56,12 +56,8 @@ export function ServicesSection() {
             Onze diensten
           </h2>
           <p className="text-foreground/90 text-lg text-pretty">
-            Bij EMW Groep bieden wij een breed scala aan diensten die uw woning
-            verduurzamen en helpen bij het verkrijgen van noodzakelijke
-            rapportages voor verkoop of verhuur. Hieronder vindt u een overzicht
-            van onze <strong>energieadviesdiensten</strong>, allemaal gericht op
-            het verbeteren van uw <strong>energielabel</strong> en het verhogen
-            van de <strong>energie-efficiëntie van uw woning</strong>:
+          Bij Het Energielabel Loket bieden wij een compleet pakket aan duurzame diensten die uw woning energiezuiniger maken en voldoen aan alle vereisten voor verkoop of verhuur.
+          Onze energieadviesdiensten zijn speciaal ontworpen om uw energielabel te verbeteren, het energieverbruik te verlagen en het wooncomfort te verhogen – snel, betrouwbaar en volledig op maat van uw woning.
           </p>
         </motion.div>
 

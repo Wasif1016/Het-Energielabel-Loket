@@ -1173,9 +1173,9 @@ export function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <Link href="mailto:info@emw-groep.nl">
+                  <Link href="mailto:energielabel.loket@gmail.com">
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-foreground/90">info@emw-groep.nl</p>
+                    <p className="text-foreground/90">energielabel.loket@gmail.com</p>
                   </Link>
                 </div>
               </div>

@@ -17,7 +17,7 @@ export default function Home() {
       <HowWeWork />
       <div className="relative h-[500px] lg:h-[calc(100vh-122px)]">
         <ParallaxImage
-          src="/office.jpg"
+          src="/cityscape.jpg"
           alt="Hero Section"
           className="w-full h-full"
         />
