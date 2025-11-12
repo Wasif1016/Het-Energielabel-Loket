@@ -3,10 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { FlickeringGrid } from "@/components/layout/background";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { ParallaxImage } from "../ui/ParallaxImage";
-import CleanEnvironment from "./clean environment.jpg";
 
 export function HeroSection() {
   return (
@@ -72,7 +70,7 @@ export function HeroSection() {
           >
             <ParallaxImage
               className="w-full mx-auto rounded-[1rem] lg:rounded-none"
-              src={CleanEnvironment}
+              src="/clean-environment.jpg"
               alt="Clean environment"
               fill={true}
             />
