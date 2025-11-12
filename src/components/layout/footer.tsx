@@ -11,8 +11,8 @@ export function Footer() {
           {/* Logo */}
           <Link href="/">
             <Image
-              src="/logo.jpg"
-              alt="Duradomi Logo"
+              src="/Het-Energielabel-Loket-logo.png"
+              alt="Het Energielabel Loket Logo"
               width={140}
               height={40}
               className="w-20"
@@ -29,10 +29,7 @@ export function Footer() {
           </div>
           <div className="text-foreground/90">
             <p>Developed by
-              <Link className="hover:underline hover:text-primary px-1" href="https://haseebkhan.online/" target="_blank" rel="noopener noreferrer">
-                Haseeb Khan
-              </Link>
-              &
+            
               <Link className="hover:underline hover:text-primary px-1" href="https://wasif-khan.netlify.app/" target="_blank" rel="noopener noreferrer">
                 Wasif Ali
               </Link>

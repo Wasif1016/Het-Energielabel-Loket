@@ -144,7 +144,7 @@ export function Header() {
           {/* Logo */}
           <Link href="#hero" className="flex items-center justify-start gap-2">
             <Image
-              src="/logo.png"
+              src="/Het-Energielabel-Loket-logo.png"
               alt="Logo"
               width={600}
               height={600}
