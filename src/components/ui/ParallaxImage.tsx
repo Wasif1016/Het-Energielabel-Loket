@@ -77,6 +77,31 @@ export function ParallaxImage({
   const isVideo =
     typeof src === "string" && (src.endsWith(".mp4") || src.endsWith(".webm"));
 
+  // Map objectFit values to Tailwind classes
+  const objectFitClasses: Record<string, string> = {
+    cover: "object-cover",
+    contain: "object-contain",
+    fill: "object-fill",
+    none: "object-none",
+    "scale-down": "object-scale-down",
+  };
+
+  // Map objectPosition values to Tailwind classes
+  const objectPositionClasses: Record<string, string> = {
+    center: "object-center",
+    top: "object-top",
+    bottom: "object-bottom",
+    left: "object-left",
+    right: "object-right",
+    "top-left": "object-top-left",
+    "top-right": "object-top-right",
+    "bottom-left": "object-bottom-left",
+    "bottom-right": "object-bottom-right",
+  };
+
+  const objectFitClass = objectFitClasses[objectFit] || "object-cover";
+  const objectPositionClass = objectPositionClasses[objectPosition] || "object-center";
+
   return (
     <div
       ref={containerRef}
@@ -89,14 +114,14 @@ export function ParallaxImage({
           loop
           muted
           playsInline
-          className={`w-full h-full object-${objectFit} object-${objectPosition}`}
+          className={`w-full h-full ${objectFitClass} ${objectPositionClass}`}
         />
       ) : (
         <Image
           src={src}
           alt={alt}
           fill={true}
-          className={`object-${objectFit} object-${objectPosition}`}
+          className={`${objectFitClass} ${objectPositionClass}`}
           priority={priority}
           quality={quality}
           sizes={sizes}
