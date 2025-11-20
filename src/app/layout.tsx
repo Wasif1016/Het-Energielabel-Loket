@@ -20,14 +20,11 @@ export const metadata: Metadata = {
     template: "%s | Het Energielabel Loket",
   },
   description:
-    "Het Energielabel Loket biedt professionele diensten voor energielabels, NEN 2580 meetrapporten, WWS puntentelling en duurzaamheidsadvies. Maak uw woning energiezuinig en verhoog de waarde.",
+    "Het Energielabel Loket biedt professionele diensten voor energielabels, WWS puntentelling en duurzaamheidsadvies. Maak uw woning energiezuinig en verhoog de waarde.",
   keywords: [
     "energielabel",
-    "NEN 2580",
     "WWS puntentelling",
     "duurzaamheidsadvies",
-    "isolatieadvies",
-    "verkoopklaar maken woning",
     "energiezuinig",
     "duurzaam wonen",
     "woningwaarde",
@@ -48,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Het Energielabel Loket",
     title: "Het Energielabel Loket | Energielabel & Duurzaamheidsadvies",
     description:
-      "Het Energielabel Loket biedt professionele diensten voor energielabels, NEN 2580 meetrapporten, WWS puntentelling en duurzaamheidsadvies. Maak uw woning energiezuinig en verhoog de waarde.",
+      "Het Energielabel Loket biedt professionele diensten voor energielabels, WWS puntentelling en duurzaamheidsadvies. Maak uw woning energiezuinig en verhoog de waarde.",
     images: [
       {
         url: "/logo.jpg",
@@ -62,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Het Energielabel Loket | Energielabel & Duurzaamheidsadvies",
     description:
-      "Het Energielabel Loket biedt professionele diensten voor energielabels, NEN 2580 meetrapporten, WWS puntentelling en duurzaamheidsadvies.",
+      "Het Energielabel Loket biedt professionele diensten voor energielabels, WWS puntentelling en duurzaamheidsadvies.",
     images: ["/logo.jpg"],
     creator: "@Het Energielabel Loket",
   },

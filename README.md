@@ -41,13 +41,31 @@ npm install
 ```
 
 3. Set up environment variables:
-Create a `.env.local` file with:
+Create a `.env.local` file in the root directory with your Brevo SMTP credentials:
 ```
-SMTP_USER=your_smtp_user
-SMTP_PASS=your_smtp_password
-SENDER_EMAIL=your_sender_email
-COMPANY_EMAIL=your_company_email
+# Brevo SMTP Configuration
+# Get your credentials from: https://app.brevo.com/settings/keys/api
+
+# Your Brevo SMTP username (usually your Brevo account email)
+SMTP_USER=your-brevo-email@example.com
+
+# Your Brevo SMTP password/key (get this from Brevo SMTP settings)
+# This is NOT your Brevo account password, but an SMTP key
+SMTP_PASS=your-brevo-smtp-key
+
+# Email address that will appear as the sender
+SENDER_EMAIL=noreply@yourdomain.com
+
+# Email address where contact form submissions will be sent
+COMPANY_EMAIL=info@yourdomain.com
 ```
+
+**Note:** To get your Brevo SMTP credentials:
+1. Sign up or log in to [Brevo](https://www.brevo.com/)
+2. Go to Settings → SMTP & API → SMTP
+3. Copy your SMTP server, login, and password
+4. Use your Brevo account email as `SMTP_USER`
+5. Use the SMTP password/key as `SMTP_PASS`
 
 4. Run the development server:
 ```bash

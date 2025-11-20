@@ -14,7 +14,7 @@ const features = [
   {
     title: "Alles onder één dak",
     description:
-      "Van energielabels tot NEN 2580 meetrapporten en WWS-puntentellingen – bij Het Energielabel Loket regelen we het volledige traject efficiënt, transparant en professioneel.",
+      "Van energielabels tot WWS-puntentellingen – bij Het Energielabel Loket regelen we het volledige traject efficiënt, transparant en professioneel.",
     icon: <Building2 className="w-12 h-12 text-primary" />,
   },
   {
@@ -26,7 +26,7 @@ const features = [
   {
     title: "Gecertificeerde adviseurs",
     description:
-      "Onze energieadviseurs en meetexperts zijn volledig gecertificeerd en werken volgens de geldende normen en richtlijnen, zoals BRL 9500 en NEN 2580.",
+      "Onze energieadviseurs en meetexperts zijn volledig gecertificeerd en werken volgens de geldende normen en richtlijnen, zoals BRL 9500.",
     icon: <Award className="w-12 h-12 text-primary" />,
   },
   {
@@ -42,9 +42,9 @@ const features = [
     icon: <UserCircle2 className="w-12 h-12 text-primary" />,
   },
   {
-    title: "Eén vast aanspreekpunt",
+    title: "Nauwkeurig en betrouwbaar",
     description:
-      "Bij Het Energielabel Loket krijgt u persoonlijke begeleiding van A tot Z, met één contactpersoon die het volledige traject coördineert en altijd bereikbaar is voor uw vragen.",
+      "Wij leveren nauwkeurige, betrouwbare rapporten met behulp van moderne tools en goedgekeurde methoden.",
     icon: <MessageSquareMore className="w-12 h-12 text-primary" />,
   },
 ];

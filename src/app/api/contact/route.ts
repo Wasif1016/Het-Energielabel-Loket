@@ -5,11 +5,8 @@ interface FormData {
   // Step 1 - Service Selection
   serviceTypes: {
     energielabel: boolean;
-    nen2580: boolean;
     wwsPunten: boolean;
     duurzaamheidsadvies: boolean;
-    isolatieadvies: boolean;
-    verkoopklaar: boolean;
   };
   
   // Business Information
@@ -50,17 +47,14 @@ interface FormData {
 
 const serviceConfig = {
   energielabel: { label: "Energielabel voor woning" },
-  nen2580: { label: "NEN 2580 meetrapport" },
   wwsPunten: { label: "WWS puntentelling" },
   duurzaamheidsadvies: { label: "Duurzaamheidsadvies voor woning" },
-  isolatieadvies: { label: "Isolatieadvies" },
-  verkoopklaar: { label: "Verkoopklaar maken woning" },
 } as const;
 
 export async function POST(req: Request) {
   try {
     const data: FormData = await req.json();
-    console.log(data);
+    console.log("Received form data:", data);
 
     // Validate required fields
     if (!data.firstName || !data.lastName || !data.email || !data.phone) {
@@ -70,31 +64,109 @@ export async function POST(req: Request) {
       );
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+      return NextResponse.json(
+        { error: "Invalid email format" },
+        { status: 400 }
+      );
+    }
+
+    // Validate environment variables - support multiple naming conventions
+    const smtpUser = 
+      process.env.SMTP_USER || 
+      process.env.BREVO_SMTP_USER || 
+      process.env.BREVO_USER ||
+      process.env.BREVO_LOGIN ||
+      process.env.SMTP_LOGIN;
+      
+    const smtpPass = 
+      process.env.SMTP_PASS || 
+      process.env.BREVO_SMTP_PASS || 
+      process.env.BREVO_SMTP_KEY || 
+      process.env.BREVO_API_KEY ||
+      process.env.SMTP_PASSWORD ||
+      process.env.BREVO_PASSWORD;
+    
+    // Debug: Log available environment variables (without exposing values)
+    if (!smtpUser || !smtpPass) {
+      const availableVars = Object.keys(process.env)
+        .filter(key => 
+          key.includes('SMTP') || 
+          key.includes('BREVO') || 
+          key.includes('EMAIL') ||
+          key.includes('MAIL')
+        )
+        .map(key => `${key}=${process.env[key] ? '***' : 'undefined'}`);
+      
+      console.error("SMTP credentials are missing. Available related env vars:", availableVars);
+      console.error("Looking for: SMTP_USER, BREVO_SMTP_USER, BREVO_USER, BREVO_LOGIN, or SMTP_LOGIN");
+      console.error("And: SMTP_PASS, BREVO_SMTP_PASS, BREVO_SMTP_KEY, BREVO_API_KEY, SMTP_PASSWORD, or BREVO_PASSWORD");
+      
+      return NextResponse.json(
+        { error: "Email service is not configured. Please check your .env file. Make sure you have SMTP_USER and SMTP_PASS (or BREVO_* variants) set." },
+        { status: 500 }
+      );
+    }
+    
+    console.log("SMTP credentials found successfully");
+
+    const senderEmail = process.env.SENDER_EMAIL || process.env.BREVO_SENDER_EMAIL;
+    const companyEmail = process.env.COMPANY_EMAIL || process.env.BREVO_COMPANY_EMAIL;
+    
+    if (!senderEmail || !companyEmail) {
+      console.error("Email addresses are not configured. Please check your .env file for SENDER_EMAIL and COMPANY_EMAIL");
+      return NextResponse.json(
+        { error: "Email service is not configured. Please check server configuration." },
+        { status: 500 }
+      );
+    }
+
     // Format selected services for email
     const formatSelectedServices = (services: FormData['serviceTypes']): string => {
-      return Object.entries(services)
+      const selected = Object.entries(services)
         .filter(([_, isSelected]) => isSelected)
-        .map(([key]) => serviceConfig[key as keyof typeof serviceConfig].label)
-        .join('\n');
+        .map(([key]) => serviceConfig[key as keyof typeof serviceConfig].label);
+      
+      return selected.length > 0 
+        ? selected.join('\n') 
+        : 'Geen diensten geselecteerd';
     };
 
     const selectedServices = formatSelectedServices(data.serviceTypes);
 
-    // Create email transporter
+    // Create email transporter with Brevo SMTP
     const transporter = nodemailer.createTransport({
       host: "smtp-relay.brevo.com",
       port: 587,
-      secure: false,
+      secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: smtpUser,
+        pass: smtpPass,
+      },
+      tls: {
+        rejectUnauthorized: false, // For development, set to true in production with proper certificates
       },
     });
 
+    // Verify transporter configuration
+    try {
+      await transporter.verify();
+      console.log("SMTP server is ready to send emails");
+    } catch (verifyError) {
+      console.error("SMTP verification failed:", verifyError);
+      const errorMessage = verifyError instanceof Error ? verifyError.message : "Unknown error";
+      return NextResponse.json(
+        { error: `Email service configuration error: ${errorMessage}. Please check your Brevo credentials.` },
+        { status: 500 }
+      );
+    }
+
     // Email to company
     const mailOptions = {
-      from: process.env.SENDER_EMAIL,
-      to: process.env.COMPANY_EMAIL,
+      from: senderEmail,
+      to: companyEmail,
       subject: "Nieuwe offerte aanvraag",
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto;">
@@ -154,12 +226,22 @@ export async function POST(req: Request) {
       `
     };
 
-    // Send email
-    await transporter.sendMail(mailOptions);
+    // Send email to company
+    try {
+      const companyEmailResult = await transporter.sendMail(mailOptions);
+      console.log("Company email sent successfully:", companyEmailResult.messageId);
+    } catch (emailError) {
+      console.error("Error sending email to company:", emailError);
+      const errorMessage = emailError instanceof Error ? emailError.message : "Unknown error";
+      return NextResponse.json(
+        { error: `Failed to send email: ${errorMessage}` },
+        { status: 500 }
+      );
+    }
 
     // Send auto-reply to customer
     const autoReplyOptions = {
-      from: process.env.SENDER_EMAIL,
+      from: senderEmail,
       to: data.email,
       subject: "Bedankt voor uw aanvraag - Het Energielabel Loket",
       html: `
@@ -182,19 +264,29 @@ export async function POST(req: Request) {
       `
     };
 
-    // Send auto-reply
-    await transporter.sendMail(autoReplyOptions);
-
-    console.log("Email sent successfully", mailOptions, autoReplyOptions);
+    // Send auto-reply to customer
+    try {
+      const autoReplyResult = await transporter.sendMail(autoReplyOptions);
+      console.log("Auto-reply email sent successfully:", autoReplyResult.messageId);
+    } catch (autoReplyError) {
+      console.error("Error sending auto-reply:", autoReplyError);
+      // Don't fail the request if auto-reply fails, but log it
+    }
 
     return NextResponse.json(
       { message: "Email sent successfully" },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.error("Error in contact form submission:", error);
+    
+    // Provide more specific error messages
+    if (error instanceof Error) {
+      console.error("Error details:", error.message);
+    }
+    
     return NextResponse.json(
-      { error: "Failed to send email" },
+      { error: "Failed to process your request. Please try again later." },
       { status: 500 }
     );
   }

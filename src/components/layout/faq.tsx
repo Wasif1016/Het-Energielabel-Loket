@@ -24,10 +24,6 @@ export default function FAQ() {
             a: "Er zijn verschillende maatregelen waarmee u uw energielabel kunt verbeteren, zoals betere isolatie van muren, vloeren en daken, het installeren van zonnepanelen, het vervangen van oude ramen door HR++ glas, of het plaatsen van een warmtepomp. Ons duurzaamheidsadvies helpt u bij het kiezen van de juiste maatregelen."
         },
         {
-            q: "Wat is een NEN 2580 meetrapport en waarom is het belangrijk?",
-            a: "Een NEN 2580 meetrapport bepaalt de gebruikersoppervlakte van een woning. Dit rapport is nodig bij verkoop, verhuur of woningsplitsing. Het biedt een objectieve en juridisch erkende berekening van de vloeroppervlakte, wat essentieel is voor vastgoedtransacties."
-        },
-        {
             q: "Wat is de WWS puntentelling en waarom heb ik het nodig?",
             a: "De WWS puntentelling wordt gebruikt om de huurprijs van een woning te berekenen volgens het Woningwaarderingsstelsel. Het aantal punten bepaalt in welke sector de woning valt (sociale of vrije sector). Het is verplicht voor verhuurders van sociale huurwoningen."
         },

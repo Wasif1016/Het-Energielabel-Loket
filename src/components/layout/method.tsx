@@ -60,8 +60,7 @@ export function HowWeWork() {
                     Snel en efficiënt uw energielabel en rapportages aanvragen
                   </strong>{" "}
                   Bij Het Energielabel Loket zorgen we ervoor dat het aanvragen van een{" "}
-                  <strong>energielabel voor uw woning</strong>, het opstellen van
-                  een <strong>NEN 2580 meetrapport</strong> of het uitvoeren van een{" "}
+                  <strong>energielabel voor uw woning</strong> of het uitvoeren van een{" "}
                   <strong>WWS puntentelling</strong> snel, duidelijk en eenvoudig
                   verloopt. Dit is hoe onze werkwijze eruitziet:
                 </p>

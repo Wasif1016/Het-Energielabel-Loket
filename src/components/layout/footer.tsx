@@ -56,6 +56,16 @@ export function Footer() {
             <p>Werkgebied: heel Nederland</p>
           </div> */}
 
+          {/* Terms and Conditions Link */}
+          <div className="text-center py-4">
+            <Link
+              href="/algemene-voorwaarden"
+              className="inline-block text-xl font-bold text-primary hover:text-primary/90 transition-colors border-2 border-primary/30 hover:border-primary/60 px-6 py-3 rounded-lg bg-primary/5 hover:bg-primary/10"
+            >
+              Algemene Voorwaarden
+            </Link>
+          </div>
+
           {/* Company Info */}
           <div className="text-foreground/90 space-y-2">
             <p>© 2025 Het Energielabel Loket. Alle rechten voorbehouden</p>

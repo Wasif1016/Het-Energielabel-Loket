@@ -15,13 +15,6 @@ const services = [
     link: "#contact",
   },
   {
-    title: "NEN 2580 Meetrapport",
-    paragraph:
-      "Ontvang een officieel NEN 2580 meetrapport voor een nauwkeurige bepaling van de gebruiksoppervlakte van uw woning – essentieel bij verkoop, verhuur of woningsplitsing.",
-    image: "/real estate surveyor measuring house.jpg",
-    link: "#contact",
-  },
-  {
     title: "WWS puntentelling",
     paragraph:
       "Wij voeren de puntentelling volgens het WWS (Woningwaarderingsstelsel) uit om de maximale huurprijs van uw woning te bepalen. Dit is essentieel voor het bepalen van de huurberekening in zowel de sociale als vrije sector.",
@@ -62,7 +55,7 @@ export function ServicesSection() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -101,7 +94,7 @@ export function ServicesSection() {
                     href={service.link}
                     className="flex items-center justify-center px-4 py-2 rounded-md bg-foreground/90 text-background w-full group-hover:bg-primary/80 group-hover:text-primary-foreground transition-colors"
                   >
-                    Contact Us <ArrowRight className="w-4 h-4 ml-2" />
+                    Neem contact met ons op <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </div>
               </div>

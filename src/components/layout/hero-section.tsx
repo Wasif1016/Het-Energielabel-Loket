@@ -83,7 +83,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-4 md:gap-3 gap-6 items-center"
+          className="grid grid-cols-1 md:grid-cols-3 md:gap-3 gap-6 items-center"
         >
           <Link
             href="#contact"
@@ -103,25 +103,6 @@ export function HeroSection() {
               <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
             <span className="">Energielabel voor woningen</span>
-          </Link>
-          <Link
-            href="#contact"
-            className="flex items-center gap-3 justify-center"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 text-primary"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-            <span className="">NEN 2580 meetrapport</span>
           </Link>
           <Link
             href="#contact"

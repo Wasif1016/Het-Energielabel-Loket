@@ -3,7 +3,6 @@ import {
   Calendar,
   ClipboardList,
   Home,
-  FileCheck,
   Receipt,
 } from "lucide-react";
 
@@ -31,12 +30,6 @@ export const howWeWork = [
     description:
       "Onze deskundige adviseur komt langs om een gedetailleerde opname van uw woning uit te voeren. Tijdens deze opname worden alle belangrijke aspecten van de woning bekeken, zoals isolatie, ramen, verwarmingssystemen en ventilatie. Dit is cruciaal voor het opstellen van een verplicht energielabel.",
     icon: Home,
-  },
-  {
-    title: "Uitwerken van het energielabel en/of rapportage",
-    description:
-      "Na de opname werkt onze adviseur het energielabel voor uw woning uit of maakt het benodigde NEN 2580 meetrapport of de WWS puntentelling. Dit gebeurt volledig volgens de geldende richtlijnen en normen.",
-    icon: FileCheck,
   },
   {
     title: "Factuur en oplevering van het energielabel",

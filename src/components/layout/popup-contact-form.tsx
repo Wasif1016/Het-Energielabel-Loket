@@ -50,11 +50,8 @@ interface FormData {
   // Step 1 - Service Selection
   serviceTypes: {
     energielabel: boolean;
-    nen2580: boolean;
     wwsPunten: boolean;
     duurzaamheidsadvies: boolean;
-    isolatieadvies: boolean;
-    verkoopklaar: boolean;
   };
   
   // Business Information
@@ -96,11 +93,8 @@ interface FormData {
 const initialFormData: FormData = {
   serviceTypes: {
     energielabel: false,
-    nen2580: false,
     wwsPunten: false,
     duurzaamheidsadvies: false,
-    isolatieadvies: false,
-    verkoopklaar: false,
   },
   clientType: "",
   companyName: "",
@@ -185,11 +179,8 @@ interface FormErrors {
 // Update service configuration
 const serviceConfig = {
   energielabel: { label: "Energielabel voor woning" },
-  nen2580: { label: "NEN 2580 meetrapport" },
   wwsPunten: { label: "WWS puntentelling" },
   duurzaamheidsadvies: { label: "Duurzaamheidsadvies voor woning" },
-  isolatieadvies: { label: "Isolatieadvies" },
-  verkoopklaar: { label: "Verkoopklaar maken woning" },
 } as const;
 
 interface PopUpContactSectionProps {
@@ -211,8 +202,8 @@ export function PopUpContactSection({
     try {
       setIsLoading(true);
 
-      // Validate required fields
-      if (currentStep === 2) {
+      // Validate required fields - last step is personal info
+      if (currentStep === steps.length - 1) {
         if (
           !formData.firstName ||
           !formData.lastName ||
@@ -220,6 +211,7 @@ export function PopUpContactSection({
           !formData.phone
         ) {
           toast.error("Vul alle verplichte velden in");
+          setIsLoading(false);
           return;
         }
       }
@@ -230,19 +222,31 @@ export function PopUpContactSection({
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) throw new Error("Failed to send message");
+      const responseData = await response.json();
 
-      //   hiding the popup
-      onSubmitSuccess?.(); //this is the function that will be called when the form is submitted
+      if (!response.ok) {
+        const errorMessage = responseData.error || "Er is iets misgegaan. Probeer het later opnieuw.";
+        toast.error(errorMessage);
+        setIsLoading(false);
+        return;
+      }
 
-      // Redirect to thank you page instead of showing toast
-      router.push("/thank-you");
+      // Show success message
+      toast.success("Uw aanvraag is succesvol verzonden! We nemen zo spoedig mogelijk contact met u op.");
 
+      // Reset form
       setFormData(initialFormData);
       setCurrentStep(0);
+
+      // Close popup after a short delay to show the success message
+      setTimeout(() => {
+        onSubmitSuccess?.();
+        // Redirect to thank you page
+        router.push("/thank-you");
+      }, 1500);
     } catch (error) {
+      console.error("Form submission error:", error);
       toast.error("Er is iets misgegaan. Probeer het later opnieuw.");
-    } finally {
       setIsLoading(false);
     }
   };
@@ -271,8 +275,8 @@ export function PopUpContactSection({
         if (!formData.recentlyRenovated) newErrors.recentlyRenovated = "Selecteer of de woning recent gerenoveerd is";
         break;
       case 2:
-        // Only validate insulation details if not requesting NEN 2580 or WWS puntentelling
-        if (!formData.serviceTypes.nen2580 && !formData.serviceTypes.wwsPunten) {
+        // Only validate insulation details if not requesting WWS puntentelling
+        if (!formData.serviceTypes.wwsPunten) {
           if (!formData.insulationDetails.trim()) newErrors.insulationDetails = "Beschrijf de huidige isolatie";
           if (!formData.sustainableInstallations.trim()) newErrors.sustainableInstallations = "Beschrijf de duurzame installaties";
         }
@@ -306,10 +310,15 @@ export function PopUpContactSection({
   };
 
   const handleNext = async () => {
-    if (!validateStep()) return;
+    const isValid = validateStep();
+    if (!isValid) {
+      // Show error message if validation fails
+      toast.error("Vul alle verplichte velden in");
+      return;
+    }
 
     if (currentStep === steps.length - 1) {
-      handleSubmit();
+      await handleSubmit();
     } else {
       setCurrentStep((prev) => prev + 1);
     }
@@ -489,8 +498,8 @@ export function PopUpContactSection({
           <div className="space-y-6">
             <h3 className="text-lg font-medium">Huidige staat van de woning</h3>
             <div className="grid gap-4">
-              {/* Only show insulation fields if not requesting NEN 2580 or WWS puntentelling */}
-              {!formData.serviceTypes.nen2580 && !formData.serviceTypes.wwsPunten && (
+              {/* Only show insulation fields if not requesting WWS puntentelling */}
+              {!formData.serviceTypes.wwsPunten && (
                 <>
                   <div>
                     <label htmlFor="insulationDetails" className="block text-sm font-medium">
@@ -830,6 +839,7 @@ export function PopUpContactSection({
                       </Button>
                     )}
                     <Button
+                      type="button"
                       className="w-full"
                       onClick={handleNext}
                       disabled={isLoading}

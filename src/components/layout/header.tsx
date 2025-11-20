@@ -151,7 +151,7 @@ export function Header() {
               className="w-fit h-14 object-contain"
               priority
             />
-            <h1 className="text-2xl font-bold text-primary hover:text-primary/90 transition-colors">
+            <h1 className="text-base md:text-2xl font-bold text-primary hover:text-primary/90 transition-colors">
               Het Energielabel Loket
             </h1>
           </Link>
