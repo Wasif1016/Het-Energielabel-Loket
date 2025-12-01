@@ -1109,7 +1109,7 @@ export function ContactSection() {
               <ul className="space-y-3">
                 {[
                   "Snel en compliant",
-                  "Gepersonaliseerde efficiënti",
+                  "Gepersonaliseerde efficientie",
                   "End-to-end service",
                 ].map((item, index) => (
                   <motion.li

@@ -13,7 +13,7 @@ export default function FAQ() {
     const faq: FAQItem[] = [
         {
             q: "Wat is een energielabel en waarom heb ik het nodig?",
-            a: "Een energielabel geeft de energieprestatie van uw woning aan, van A++++ (zeer energiezuinig) tot G (zeer energieonzuinig). Bij de verkoop of verhuur van een woning is het verplicht om een energielabel te overleggen. Het label helpt kopers en huurders om inzicht te krijgen in de energie-efficiëntie van de woning."
+            a: "Een energielabel geeft de energieprestatie van uw woning aan, van A++++ (zeer energiezuinig) tot G (zeer energieonzuinig). Bij de verkoop of verhuur van een woning is het verplicht om een energielabel te overleggen. Het label helpt kopers en huurders om inzicht te krijgen in de energie-efficientiee van de woning."
         },
         {
             q: "Hoe krijg ik een energielabel voor mijn woning?", 

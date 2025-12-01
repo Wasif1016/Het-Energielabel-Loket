@@ -60,7 +60,7 @@ export default function WhyChooseSection() {
           transition={{ duration: 0.5 }}
           className=" mb-12 space-y-4"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-4xl md:text-5xl pl-12 font-bold">
             Waarom voor ons kiezen
           </h2>
         </motion.div>

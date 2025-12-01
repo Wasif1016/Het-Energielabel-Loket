@@ -15,7 +15,8 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 63.6 46.9% 41.4%;
+    /* Brand primary: #494e47 */
+    --primary: 120 5% 30%;
     --primary-foreground: 355.7 100% 97.3%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -45,7 +46,8 @@
     --card-foreground: 0 0% 95%;
     --popover: 0 0% 9%;
     --popover-foreground: 0 0% 95%;
-    --primary: 63.6 46.9% 41.4%;
+    /* Brand primary (dark): #494e47 */
+    --primary: 120 5% 30%;
     --primary-foreground: 144.9 80.4% 10%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -88,4 +90,17 @@
 
 .body {
   font-family: var(--font-dm-sans);
+}
+
+/* Make layout a bit wider on tablet and desktop */
+@media (min-width: 768px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1400px;
+  }
 }

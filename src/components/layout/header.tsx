@@ -163,7 +163,7 @@ export function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`relative group text-lg font-semibold pr-6 px-4 py-1 `}
+                className={`relative group text-base lg:text-lg font-semibold px-3 lg:px-4 py-1`}
               >
                 {item.label}
               </Link>
