@@ -69,6 +69,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="text-foreground/90 space-y-2">
             <p>© 2025 Het Energielabel Loket. Alle rechten voorbehouden</p>
+            <p>cid:15C8FCFB-9920-484A-B0C3-2DD45EA28C65</p>
           </div>
           <div className="text-foreground/90">
             <p>

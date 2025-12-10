@@ -6,6 +6,7 @@ import FAQ from "@/components/layout/faq";
 import { ContactSection } from "@/components/layout/contact-section";
 import { SustainabilitySection } from "@/components/layout/sustainability-section";
 import { ParallaxImage } from "@/components/ui/ParallaxImage";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -24,6 +25,29 @@ export default function Home() {
       </div>
       <FAQ />
       <ContactSection />
+      {/* Certificate Section */}
+      <section className="py-16 bg-gradient-to-b from-background to-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-foreground">
+              Certificering
+            </h2>
+            <div className="bg-white rounded-lg shadow-lg p-4 md:p-8 flex justify-center items-center">
+              <div className="relative w-full max-w-4xl">
+                <Image
+                  src="/Certificaat Het Energielabel Loket nov 2025_page-0001.jpg"
+                  alt="NL-EPBD® Procescertificaat - Het Energielabel Loket"
+                  width={1200}
+                  height={1697}
+                  className="w-full h-auto rounded-md shadow-md"
+                  quality={95}
+                  priority={false}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
