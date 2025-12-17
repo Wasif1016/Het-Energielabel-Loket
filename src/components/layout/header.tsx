@@ -77,6 +77,10 @@ export function Header() {
       href: "#about",
     },
     {
+      label: "Certificering",
+      href: "#certificering",
+    },
+    {
       label: "Veelgestelde vragen",
       href: "#faq",
     },
@@ -164,6 +168,7 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 className={`relative group text-base lg:text-lg font-semibold px-3 lg:px-4 py-1`}
+                onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.label}
               </Link>
