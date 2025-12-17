@@ -36,7 +36,7 @@ export default function Home() {
               <div className="relative w-full max-w-4xl">
                 <div className="relative aspect-[1200/1697] w-full h-auto max-w-full">
                   <Image
-                    src="/Certificaat%20Het%20Energielabel%20Loket%20nov%202025_page-0001.jpg"
+                    src="/Certificaate.jpg"
                     alt="NL-EPBD® Procescertificaat - Het Energielabel Loket"
                     fill
                     style={{ objectFit: "contain" }}
