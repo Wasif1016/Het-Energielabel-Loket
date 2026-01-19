@@ -76,11 +76,11 @@ export function Footer() {
               Developed by
               <Link
                 className="hover:underline hover:text-primary px-1"
-                href="https://wasif-khan.netlify.app/"
+                href="https://www.upwork.com/freelancers/~01416f5dd867bc4a69"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Wasif Ali
+                Haseeb & Wasif
               </Link>
             </p>
           </div>

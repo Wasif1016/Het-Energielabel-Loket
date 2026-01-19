@@ -583,7 +583,6 @@ export function ContactSection() {
                       onChange={(e) =>
                         setFormData({ ...formData, insulationDetails: e.target.value })
                       }
-                      placeholder="indien onbekend mag u dit leeg laten"
                       rows={4}
                     />
                     {errors.insulationDetails && (
@@ -604,7 +603,6 @@ export function ContactSection() {
                           sustainableInstallations: e.target.value,
                         })
                       }
-                      placeholder="indien onbekend mag u dit leeg laten. Denk aan warmtepomp, zonnepanelen, etc etc.."
                       rows={4}
                     />
                     {errors.sustainableInstallations && (
